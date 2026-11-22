@@ -1,0 +1,6 @@
+@Pugna.API_HostAddress = http://localhost:5122
+
+GET {{Pugna.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
