@@ -1,5 +1,4 @@
 
-
 Bom, é uma API de um jogo web
 Usa o Render que é um PaaS, então o limite vai ser provavelmente memória e CPU e muito talvez banda larga mas acho que tudo isso é contornável, afinal o jogo em sí é uma demo de cubos e etc só pra demonstrar o threeJS e o servidor
 

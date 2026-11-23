@@ -6,7 +6,7 @@
 
 An ASP.NET Core API for a small co-op browser game built with Three.js. I'm building it to learn how to write game rules, store match results and keep two players in sync
 
-The API currently has a Hello World endpoint. Docker Compose starts the API and PostgreSQL. The database connection and Render deploy are planned.
+The API currently has 5 endpoints, Docker and Postgre through npgsql working
 
 - Use the [backend spec](docs/backend-spec.md) to see what the game should do
 - Use the [architecture guide](docs/architecture.md) to see where the code belongs.
