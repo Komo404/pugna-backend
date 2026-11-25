@@ -3,11 +3,11 @@ using Pugna.Core.Rooms;
 
 namespace Pugna.Infra.Persistence;
 
-public class PostgresRoomRepository : IRoomRepository
+public class RoomRepository : IRoomRepository
 {
     private readonly NpgsqlDataSource _dataSource;
     
-    public PostgresRoomRepository(NpgsqlDataSource dataSource)
+    public RoomRepository(NpgsqlDataSource dataSource)
     {
         _dataSource = dataSource;
     }   

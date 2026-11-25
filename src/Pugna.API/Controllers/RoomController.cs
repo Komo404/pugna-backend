@@ -7,22 +7,23 @@ namespace Pugna.API.Controllers;
 [Route("[controller]")]
 public class RoomController : ControllerBase
 {
-    private readonly IRoomRepository _roomRepository;
-    public RoomController(IRoomRepository roomRepository)
+    private readonly RoomService _roomService;
+
+    public RoomController(RoomService roomService)
     {
-        _roomRepository = roomRepository;
+        _roomService = roomService;
     }
 
     [HttpGet(Name = "Get Room")]
     public async Task<IEnumerable<Room>> GetGetAllRooms()
     {
-        return await _roomRepository.GetAllRoomsAsync();
+        return await _roomService.GetAllRoomsAsync();
     }
 
     [HttpGet("{id}", Name = "Get Room By Id")]
     public async Task<IActionResult> GetRoomById(int id)
     {
-        var room = await _roomRepository.GetRoomByIdAsync(id);
+        var room = await _roomService.GetRoomByIdAsync(id);
         if (room == null)
         {
             return NotFound();
@@ -38,7 +39,7 @@ public class RoomController : ControllerBase
             return BadRequest("Capacity must be greater than 0");
         }
 
-        var createdRoom = await _roomRepository.CreateRoomAsync(room);
+        var createdRoom = await _roomService.CreateRoomAsync(room);
         return CreatedAtAction(nameof(GetRoomById), new { id = createdRoom.Id }, createdRoom);
     }
 
@@ -50,7 +51,7 @@ public class RoomController : ControllerBase
             return BadRequest("Capacity must be greater than 0");
         }
         
-        var updatedRoom = await _roomRepository.UpdateRoomAsync(room);
+        var updatedRoom = await _roomService.UpdateRoomAsync(room);
         if (updatedRoom == null)
         {
             return NotFound();
@@ -61,7 +62,7 @@ public class RoomController : ControllerBase
     [HttpDelete(Name = "Delete Room")]
     public async Task<IActionResult> Delete(int id)
     {
-        var deleted = await _roomRepository.DeleteRoomAsync(id);
+        var deleted = await _roomService.DeleteRoomAsync(id);
         if (!deleted)
         {
             return NotFound();
