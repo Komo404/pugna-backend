@@ -1,10 +1,9 @@
-# Backend spec
+# Backend Specification
 
 This is the plan for the MVP
 
 ## A round
 
-1. There must be a Room System (Create a room, Read the room informations, Update the room status and Delete the room)
 1.1: A Code system to join the room
 1.2: A "Ready" system to start the match
 2. Each player activates a different terminal. Both win if they activate both terminals before time runs out. Start with a 60-second limit
@@ -20,13 +19,26 @@ This is the plan for the MVP
 
 For now, the server checks who sent the action, whether the round is active, how much time is left, and whether the action already happened. If activating a terminal later requires standing next to it, the server will also need to check the player's position.
 
-## What to build first
+## System Roadmap
 
-1. Play a full round over HTTP in two tabs using temporary player IDs for development.
-2. Save players and match results in PostgreSQL. Check what happens when two actions arrive at once.
-3. Add sign-up and login, link results to accounts, and check who can act in each room.
-4. Send live updates and let players catch up after reconnecting.
-5. Add a profile with matches played, wins, losses, and best winning time. Start the leaderboard with the fastest winning pairs.
-6. Run the demo on Render and add logs that help explain what went wrong during a match.
-
-Still open: what happens if the host leaves, how to handle a server restart, and whether players need to see each other move.
+0. [x] Create Main ASP.NET Server
+0.1 [x] Create CSProjs
+0.2 [x] Connect References
+0.3 [x] Add Docker
+0.4 [x] Setup Postgre
+0.5 [x] Setup npgSQL
+1. [x] Create Initial Room System
+1.1 [x] Create Main Endpoints
+1.2 [x] Create Postgre connections
+2. [ ] Create Authentication System
+2.1 [ ] Define Player Model
+2.2 [ ] Create Sign Up System
+2.3 [ ] Create Sign In System
+3. [ ] Improve Room System
+4. [ ] Create Match system
+4.5 [ ] Create websocket system
+5. [ ] Create Chat system
+6. [ ] Create Statistics System
+7. [ ] Create Leaderboard System
+8. [ ] Render Observability
+9. [ ] Github Actions CI/CD
