@@ -7,6 +7,7 @@ Docker
 ## Possíveis stacks
 
 - EF Core
+- .NET Core Identity
 - RabbitMQ
 - Github Actions
 
@@ -14,10 +15,10 @@ Docker
 # Feats adicionadas:
 
 Room system
+Sign in, sign up, Logout
 
 ## Feats restantes:
 
-- Um sistema de sign in e sign up com Model de Player
 - Ciclo de vida de uma room expandida: Lobby -> Partida -> Pausado
 
 - Sincronização in-game (Movimentação e ações)
